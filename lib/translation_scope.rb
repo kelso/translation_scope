@@ -7,6 +7,9 @@ module TranslationScope
     action = "edit" if action == "update"
     
     path = "#{params[:controller]}/#{action}"
+    path = "#{params[:controller]}" if options[:action] == false
+    path = "#{params[:controller]}/#{options[:action]}" if options[:action].class == String
+    
     path = options[:scope] if options[:scope]
     scope = path.gsub('/','_')
     
