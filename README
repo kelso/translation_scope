@@ -1,13 +1,32 @@
 TranslationScope
 ================
 
-Introduction goes here.
+Extends I18n library with ts() helper, to easier traslation your site.
+You can write less code and keep the right structure of your YML file. And the result is the same.
 
+Helper tt recognizes, what controller and action is acctualy open
+and set the translation scope.
 
 Example
 =======
 
-Example goes here.
+For example, in view /articles/edit.html.erb we can write:
+
+  <%= ts('page_title') %>
+
+and in background helper call
+
+  t('articles_edit.page_title')
+
+YML should looks like
+  
+  en:
+    articles_edit:
+      page_title: "Edit article"
+      # ...
+    articles_new
+      page_title: "New article"
+      # ...
 
 
 Copyright (c) 2010 Stefan Huska, released under the MIT license
